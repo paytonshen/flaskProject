@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Add a Post{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+    <h1 class="mt-5">Create a Bost </h1>
+    <p class="lead">Enter in your new post!</p>
+
+    <form action="">
+        <label for="title">Bost Title:</label><br>
+        <input type="text" id="title" name="title" ><br>
+        <label for="subtitle">Subtitle:</label><br>
+        <input type="text" id="subtitle" name="subtitle" ><br>
+        <label for="body">Body:</label><br>
+        <textarea name="body" rows="10" cols="60"></textarea><br>
+        <label for="category">Category:</label><br>
+        <input list="Categories" name = category>
+        <datalist id="Categories" name = category>
+            <option value="School">
+            <option value="Sports">
+        </datalist>
+        <input type="submit" value="Submit"><br><br>
+    </form>
+
+{% endblock %}
