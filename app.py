@@ -5,7 +5,10 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+
 
 
 class Post(db.Model):
@@ -39,4 +42,7 @@ def create_post():
 
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run()
+
